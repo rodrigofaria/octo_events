@@ -28,7 +28,9 @@ After configuring database you can use your favorite IDE to import the project.
 Inside the folder `sample-webhook-github\src\main\resources\` you have to open the file `application.properties` and edit those properties below:
 
 `spring.datasource.url=[jdbc:postgresql://IP:PORT/DATABASE]`
+
 `spring.datasource.username= [USER]`
+
 `spring.datasource.password=[PASSWORD]`
 
 After that just open the class `br.com.rodrigoluisfaria.samplewebhookgithub.RestServiceApplication` and execute as a Java Application.
@@ -36,6 +38,7 @@ After that just open the class `br.com.rodrigoluisfaria.samplewebhookgithub.Rest
 ### Run with Maven
 
 With you want to run project outside any IDE, just go to a command line and run the command below:
+
 `./mvnw spring-boot:run`
 
 ### APIs
@@ -43,6 +46,7 @@ With you want to run project outside any IDE, just go to a command line and run 
 #POST [http://localhost:80/](http://localhost:80/)
 
 Content-Body:
+```sh
 {
   "action": "opened",
   "issue": {
@@ -53,6 +57,7 @@ Content-Body:
     "closed_at": null,
   }
 }
+```
 
 #GET [http://localhost:80/issues/{event_number}/events](http://localhost:80/issues/{event_number}/events)
 
